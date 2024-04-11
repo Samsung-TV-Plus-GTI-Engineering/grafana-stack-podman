@@ -17,6 +17,11 @@ spec:
       containers:
       - name: grafana
         image: docker.io/grafana/grafana:latest
+        env:
+          - name: AWS_SDK_LOAD_CONFIG
+            value: true
+          - name: GF_AUTH_SIGV4_AUTH_ENABLED
+            value: true
         ports:
           - containerPort: 3000
             hostPort: 3000
